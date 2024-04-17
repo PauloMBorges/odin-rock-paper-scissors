@@ -15,9 +15,8 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-
 // asks user's choice
-function playerSelection() {
+function getPlayerChoice() {
     let checkChoice = 1; 
     let playerChoice;
     // checks if the user's input is valid. Continues the loop until it receives a valid answer.
@@ -31,4 +30,3 @@ function playerSelection() {
     }
     return playerChoice
 }
-
