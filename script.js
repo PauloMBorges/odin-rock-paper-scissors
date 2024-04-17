@@ -5,11 +5,11 @@ function getComputerChoice() {
     // 0 = 'Rock', 1 = 'Paper', 2 = 'Scissors'
     let computerChoice; 
     if (randomNumber === 0) {
-        computerChoice = 'Rock';
+        computerChoice = 'rock';
     } else if (randomNumber === 1) {
-        computerChoice = 'Paper';
+        computerChoice = 'paper';
     } else {
-        computerChoice= 'Scissors';
+        computerChoice= 'scissors';
     }
 
     return computerChoice;
