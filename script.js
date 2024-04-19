@@ -31,8 +31,8 @@ function getPlayerChoice() {
     return playerChoice
 }
 
-let computerSelection = getComputerChoice();
-let playerSelection = getPlayerChoice();
+let computerSelection; /* = getComputerChoice();*/
+let playerSelection; /*= getPlayerChoice();*/
 
 function playSingleRound(computerSelection, playerSelection) {
     let result;
@@ -54,4 +54,13 @@ function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-console.log(playSingleRound(computerSelection, playerSelection));
+function playGame() {
+    // five round game
+    for(let i = 0; i < 5; i++) {
+        playerSelection = getPlayerChoice();
+        computerSelection = getComputerChoice();
+        alert(playSingleRound(computerSelection, playerSelection));
+    }
+}
+
+playGame();
