@@ -31,5 +31,23 @@ function getPlayerChoice() {
     return playerChoice
 }
 
-let computerSelection = getComputerChoice();
+let computerSelection = /*getComputerChoice()*/'rock';
 let playerSelection = getPlayerChoice();
+
+function playSingleRound(computerSelection, playerSelection) {
+    let result;
+    if (computerSelection === playerSelection) {
+        result = `Tie! Both chose ${playerSelection}`;
+    } 
+    else if ((playerSelection === 'rock' && computerSelection === 'scissors') ||
+            (playerSelection === 'paper' && computerSelection === 'rock') ||
+            (playerSelection === 'scissors' && computerSelection === 'paper')) {
+        result = `You Win! ${playerSelection} beats ${computerSelection}`;
+    }
+    else {
+        result = `You Lose! ${computerSelection} beats ${playerSelection}`;
+    }
+    return result;
+}
+
+console.log(playSingleRound(computerSelection, playerSelection));
