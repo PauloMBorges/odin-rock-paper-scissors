@@ -31,23 +31,27 @@ function getPlayerChoice() {
     return playerChoice
 }
 
-let computerSelection = /*getComputerChoice()*/'rock';
+let computerSelection = getComputerChoice();
 let playerSelection = getPlayerChoice();
 
 function playSingleRound(computerSelection, playerSelection) {
     let result;
     if (computerSelection === playerSelection) {
-        result = `Tie! Both chose ${playerSelection}`;
+        result = `Tie! Both chose ${capitalizeFirstLetter(playerSelection)}`;
     } 
     else if ((playerSelection === 'rock' && computerSelection === 'scissors') ||
             (playerSelection === 'paper' && computerSelection === 'rock') ||
             (playerSelection === 'scissors' && computerSelection === 'paper')) {
-        result = `You Win! ${playerSelection} beats ${computerSelection}`;
+        result = `You Win! ${capitalizeFirstLetter(playerSelection)} beats ${capitalizeFirstLetter(computerSelection)}`;
     }
     else {
-        result = `You Lose! ${computerSelection} beats ${playerSelection}`;
+        result = `You Lose! ${capitalizeFirstLetter(computerSelection)} beats ${capitalizeFirstLetter(playerSelection)}`;
     }
     return result;
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 console.log(playSingleRound(computerSelection, playerSelection));
