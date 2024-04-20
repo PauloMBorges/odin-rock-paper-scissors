@@ -68,9 +68,17 @@ function updateScore() {
 function checkWinner() {
     if (playerScore >= 5) {
         document.querySelector("#winner").innerText = "You win the game!";
+        disableButtons();
     } else if (computerScore >= 5) {
         document.querySelector("#winner").innerText = "The computer wins the game!";
+        disableButtons();
     }
+}
+
+function disableButtons() {
+    document.querySelector("#rock").disabled = true;
+    document.querySelector("#paper").disabled = true;
+    document.querySelector("#scissors").disabled = true;
 }
 
 function capitalizeFirstLetter(string) {
