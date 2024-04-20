@@ -33,8 +33,8 @@ function getPlayerChoice() {
 }
 
 */
-//let computerSelection; 
-//let playerSelection;
+let computerScore = 0; 
+let playerScore = 0;
 
 
 function playSingleRound(playerSelection) {
@@ -47,10 +47,13 @@ function playSingleRound(playerSelection) {
             (playerSelection === 'paper' && computerSelection === 'rock') ||
             (playerSelection === 'scissors' && computerSelection === 'paper')) {
         result = `You Win! ${capitalizeFirstLetter(playerSelection)} beats ${capitalizeFirstLetter(computerSelection)}`;
+        playerScore++;
     }
     else {
         result = `You Lose! ${capitalizeFirstLetter(computerSelection)} beats ${capitalizeFirstLetter(playerSelection)}`;
+        computerScore++;
     }
+
     document.querySelector("#result").innerText = result;
     return result;
 }
