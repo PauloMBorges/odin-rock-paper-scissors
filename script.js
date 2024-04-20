@@ -51,7 +51,7 @@ function playSingleRound(playerSelection) {
     else {
         result = `You Lose! ${capitalizeFirstLetter(computerSelection)} beats ${capitalizeFirstLetter(playerSelection)}`;
     }
-    console.log(result);
+    document.querySelector("#result").innerText = result;
     return result;
 }
 
