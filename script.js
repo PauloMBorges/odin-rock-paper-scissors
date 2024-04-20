@@ -15,6 +15,7 @@ function getComputerChoice() {
     return computerChoice;
 }
 
+/*
 // asks user's choice
 function getPlayerChoice() {
     let checkChoice = 1; 
@@ -31,10 +32,13 @@ function getPlayerChoice() {
     return playerChoice
 }
 
-let computerSelection; /* = getComputerChoice();*/
-let playerSelection; /*= getPlayerChoice();*/
+*/
+//let computerSelection; 
+//let playerSelection;
 
-function playSingleRound(computerSelection, playerSelection) {
+
+function playSingleRound(playerSelection) {
+    let computerSelection = getComputerChoice();
     let result;
     if (computerSelection === playerSelection) {
         result = `Tie! Both chose ${capitalizeFirstLetter(playerSelection)}`;
@@ -47,6 +51,7 @@ function playSingleRound(computerSelection, playerSelection) {
     else {
         result = `You Lose! ${capitalizeFirstLetter(computerSelection)} beats ${capitalizeFirstLetter(playerSelection)}`;
     }
+    console.log(result);
     return result;
 }
 
@@ -54,6 +59,19 @@ function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
+document.querySelector("#rock").addEventListener("click", function() {
+    playSingleRound("rock");
+});
+
+document.querySelector("#paper").addEventListener("click", function() {
+    playSingleRound("paper");
+});
+
+document.querySelector("#scissors").addEventListener("click", function() {
+    playSingleRound("scissors");
+});
+
+/*
 function playGame() {
     // five round game
     for(let i = 0; i < 5; i++) {
@@ -62,5 +80,4 @@ function playGame() {
         alert(playSingleRound(computerSelection, playerSelection));
     }
 }
-
-playGame();
+*/
