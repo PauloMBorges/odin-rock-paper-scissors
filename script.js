@@ -54,8 +54,14 @@ function playSingleRound(playerSelection) {
         computerScore++;
     }
 
+    updateScore();
+
     document.querySelector("#result").innerText = result;
     return result;
+}
+
+function updateScore() {
+    document.querySelector("#score").innerText = `Player: ${playerScore} Computer: ${computerScore}`;
 }
 
 function capitalizeFirstLetter(string) {
