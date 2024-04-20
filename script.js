@@ -55,6 +55,7 @@ function playSingleRound(playerSelection) {
     }
 
     updateScore();
+    checkWinner();
 
     document.querySelector("#result").innerText = result;
     return result;
@@ -62,6 +63,14 @@ function playSingleRound(playerSelection) {
 
 function updateScore() {
     document.querySelector("#score").innerText = `Player: ${playerScore} Computer: ${computerScore}`;
+}
+
+function checkWinner() {
+    if (playerScore >= 5) {
+        document.querySelector("#winner").innerText = "You win the game!";
+    } else if (computerScore >= 5) {
+        document.querySelector("#winner").innerText = "The computer wins the game!";
+    }
 }
 
 function capitalizeFirstLetter(string) {
